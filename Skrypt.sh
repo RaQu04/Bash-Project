@@ -146,7 +146,19 @@ else
     exit
 fi
 
-if [ -w $4 ]
+if [ -w $5 ]
+    then 
+    date >> info.log
+    echo user has write >> info.log
+else 
+    date >> info.log
+    echo user has not write >> info.log
+    success=1
+    echo Błąd. 
+    exit
+fi 
+
+if [ -w $7 ]
     then 
     date >> info.log
     echo user has write >> info.log
@@ -235,6 +247,7 @@ fi
 #14. Zwracanie kodu powrotu (exit code) - brak 
 date >> ../info.log
 echo Exit code = $? >> ../info.log;
+echo Exit code = $? 
 
 
 # echo Nazwa usera $1
